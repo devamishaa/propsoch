@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styled from "@emotion/styled";
 import { Property } from "../types/Property";
-import propertyImg from "../assets/property.jpeg";
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -98,6 +97,7 @@ const Dot = styled.div<{ active: boolean }>`
 interface PropertyCardProps {
   property: Property;
   onWishlist: (id: string) => void;
+  onClick?:(id: string) =>void;
 }
 
 export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onWishlist }) => {

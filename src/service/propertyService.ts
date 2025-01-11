@@ -104,7 +104,7 @@ interface PropertyResponse {
     await new Promise(resolve => setTimeout(resolve, 800));
     
     // Simulate API pagination
-    const propertiesPerPage = 4;
+    // const propertiesPerPage = 4;
     const maxPages = 5;
     
     if (page > maxPages) {

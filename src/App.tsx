@@ -10,7 +10,7 @@ import styled from "@emotion/styled";
 import { PropertyCard } from "./components/PropertyCard";
 import { Property } from "./types/Property";
 import { fetchProperties } from "./service/propertyService";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PropertyDetail from "./components/PropertyDetail";
 import Navbar from "./components/Navigation";
 import Header from "./components/Header";
@@ -60,7 +60,7 @@ const Loader = styled.div`
 
 export const MainComponent: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
-  const [wishlist, setWishlist] = useState<string[]>([]); // Store wishlist items
+  const [,setWishlist] = useState<string[]>([]); 
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
@@ -86,11 +86,11 @@ export const MainComponent: React.FC = () => {
   }, []);
 
   const toggleWishlist = (id: string) => {
-    setWishlist((prevWishlist) => {
+    setWishlist((prevWishlist:any) => {
       if (prevWishlist.includes(id)) {
-        return prevWishlist.filter((item) => item !== id); // Remove from wishlist
+        return prevWishlist.filter((item:any) => item !== id); 
       } else {
-        return [...prevWishlist, id]; // Add to wishlist
+        return [...prevWishlist, id]; 
       }
     });
   };

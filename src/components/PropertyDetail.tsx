@@ -120,7 +120,7 @@
 
 // export default PropertyDetail;
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "@emotion/styled";
 import propertyImg from "../assets/property.jpeg";
@@ -134,7 +134,7 @@ const PropertyDetails = styled.div`/* styles */`;
 const PropertyName = styled.h1`font-size:25px;font-weight:500`;
 const PropertyLocation = styled.p`/* styles */`;
 const Body = styled.div`/* styles */`;
-const MapContainer = styled.div`/* styles */`;
+// const MapContainer = styled.div`/* styles */`;
 
 interface PropertyDetailProps {
   id: string;
@@ -167,11 +167,11 @@ const PropertyDetail: React.FC = () => {
 
 //   const mapRef = useRef<HTMLDivElement>(null);
 
-  const handleGesture = (event: React.WheelEvent<HTMLDivElement>) => {
-    if (event.ctrlKey) {
-      event.stopPropagation();
-    }
-  };
+  // const handleGesture = (event: React.WheelEvent<HTMLDivElement>) => {
+  //   if (event.ctrlKey) {
+  //     event.stopPropagation();
+  //   }
+  // };
 
   return (
     <Container>

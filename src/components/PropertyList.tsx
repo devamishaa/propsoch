@@ -52,11 +52,12 @@ export const PropertyList: React.FC = () => {
     const newProperties: Property[] = [
       {
         id: Date.now().toString(),
-        title: 'Sushant Lok 2, Gurgaon',
+        name: 'Sushant Lok 2, Gurgaon',
         location: 'Gurgaon, India',
         rating: 4.8,
         views: 6172,
         dateRange: 'Apr 5 - 10',
+        isMostLiked:true,
         images: [
           'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800',
           'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800',
