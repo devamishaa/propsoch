@@ -47,7 +47,7 @@ const properties = [
           "Piped Gas Connection",
           "Jogging Track",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -91,7 +91,7 @@ const properties = [
           "Rain water harvesting",
           "Indoor games",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -115,7 +115,7 @@ const properties = [
         price: "4.7 Cr",
         emiAvailable: false,
         fullAddress:
-          "DSR ELIXIR , Sy. No.64/1, 64/2, 65/1, 65/2, 65/3, 65/4 69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
+          "69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
         mapLocation: {
           longitude: 77.742563,
           latitude: 13.029786,
@@ -139,7 +139,7 @@ const properties = [
           "CCTV Surveillance",
           "24x7 Security",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -174,7 +174,7 @@ const properties = [
           Restaurants: 2,
         },
         propertyAmenities: ["Car Parking"],
-        propertyType: "House",
+        propertyType: ["Apartment","Home"],
       },
     },
     //
@@ -226,7 +226,7 @@ const properties = [
           "Piped Gas Connection",
           "Jogging Track",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -270,7 +270,7 @@ const properties = [
           "Rain water harvesting",
           "Indoor games",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -294,7 +294,7 @@ const properties = [
         price: "4.7 Cr",
         emiAvailable: false,
         fullAddress:
-          "DSR ELIXIR , Sy. No.64/1, 64/2, 65/1, 65/2, 65/3, 65/4 69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
+          "69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
         mapLocation: {
           longitude: 77.742563,
           latitude: 13.029786,
@@ -318,7 +318,7 @@ const properties = [
           "CCTV Surveillance",
           "24x7 Security",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -353,10 +353,9 @@ const properties = [
           Restaurants: 2,
         },
         propertyAmenities: ["Car Parking"],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
-    // //
     {
       id: 9,
       name: "Codename Gottigere",
@@ -405,7 +404,7 @@ const properties = [
           "Piped Gas Connection",
           "Jogging Track",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -449,7 +448,7 @@ const properties = [
           "Rain water harvesting",
           "Indoor games",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -473,7 +472,7 @@ const properties = [
         price: "4.7 Cr",
         emiAvailable: false,
         fullAddress:
-          "DSR ELIXIR , Sy. No.64/1, 64/2, 65/1, 65/2, 65/3, 65/4 69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
+          "69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
         mapLocation: {
           longitude: 77.742563,
           latitude: 13.029786,
@@ -497,7 +496,7 @@ const properties = [
           "CCTV Surveillance",
           "24x7 Security",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -532,10 +531,9 @@ const properties = [
           Restaurants: 2,
         },
         propertyAmenities: ["Car Parking"],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
-    // // //
     {
       id: 13,
       name: "Codename Gottigere",
@@ -584,7 +582,7 @@ const properties = [
           "Piped Gas Connection",
           "Jogging Track",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -628,7 +626,7 @@ const properties = [
           "Rain water harvesting",
           "Indoor games",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -652,7 +650,7 @@ const properties = [
         price: "4.7 Cr",
         emiAvailable: false,
         fullAddress:
-          "DSR ELIXIR , Sy. No.64/1, 64/2, 65/1, 65/2, 65/3, 65/4 69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
+          "DSR ELIXIR , so.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
         mapLocation: {
           longitude: 77.742563,
           latitude: 13.029786,
@@ -676,7 +674,7 @@ const properties = [
           "CCTV Surveillance",
           "24x7 Security",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -711,10 +709,9 @@ const properties = [
           Restaurants: 2,
         },
         propertyAmenities: ["Car Parking"],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
-    // // // //
     {
       id: 17,
       name: "Codename Gottigere",
@@ -763,7 +760,7 @@ const properties = [
           "Piped Gas Connection",
           "Jogging Track",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -807,7 +804,7 @@ const properties = [
           "Rain water harvesting",
           "Indoor games",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -831,7 +828,7 @@ const properties = [
         price: "4.7 Cr",
         emiAvailable: false,
         fullAddress:
-          "DSR ELIXIR , Sy. No.64/1, 64/2, 65/1, 65/2, 65/3, 65/4 69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
+          "69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
         mapLocation: {
           longitude: 77.742563,
           latitude: 13.029786,
@@ -855,7 +852,7 @@ const properties = [
           "CCTV Surveillance",
           "24x7 Security",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -893,7 +890,6 @@ const properties = [
         propertyType: "Apartment",
       },
     },
-    // // // // //
     {
       id: 21,
       name: "Codename Gottigere",
@@ -942,7 +938,7 @@ const properties = [
           "Piped Gas Connection",
           "Jogging Track",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -986,7 +982,7 @@ const properties = [
           "Rain water harvesting",
           "Indoor games",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -1010,7 +1006,7 @@ const properties = [
         price: "4.7 Cr",
         emiAvailable: false,
         fullAddress:
-          "DSR ELIXIR , Sy. No.64/1, 64/2, 65/1, 65/2, 65/3, 65/4 69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
+          "69/3, 70/1 and Sy.No.70/2 of Bidare Agrahara Village Bidarahalli Hobli, BETQ, Bengaluru, Bengaluru, Karnataka 560049",
         mapLocation: {
           longitude: 77.742563,
           latitude: 13.029786,
@@ -1034,7 +1030,7 @@ const properties = [
           "CCTV Surveillance",
           "24x7 Security",
         ],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
     {
@@ -1069,7 +1065,7 @@ const properties = [
           Restaurants: 2,
         },
         propertyAmenities: ["Car Parking"],
-        propertyType: "Apartment",
+        propertyType: ["Apartment","Home"],
       },
     },
   ];

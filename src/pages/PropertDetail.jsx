@@ -31,7 +31,7 @@ const Detail = () => {
       <>
         <Header />
         <div css={noPropertiesStyle}>
-          <h2>Property Not Found</h2>
+          <h2 style={{ fontSize: "25px" }}>Property Not Found</h2>
         </div>
         <Navbar />
       </>
@@ -66,14 +66,16 @@ const Detail = () => {
         {/* Property Title, Location, and Price */}
         <div css={propertyInfoContainerStyle}>
           <div css={propertyTitlePriceStyle}>
-            <h2>{property.name}</h2>
-            <h3>{property?.details?.price}</h3>
+            <h2 style={{ fontSize: "25px" }}>{property.name}</h2>
+            <h3 style={{ fontSize: "25px" }}>{property?.details?.price}</h3>
           </div>
           <div css={propertyLocationStyle}>
             {(property?.details?.sector || property?.details?.localArea) && (
-              <div>
-                <PlaceRoundedIcon style={{ fontSize: "1.2rem" }} />
-                <span>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <PlaceRoundedIcon
+                  style={{ fontSize: "2rem", color: "#1F4C6B" }}
+                />
+                <span style={{ color: "#888888", lineHeight: "14px" }}>
                   {property?.details?.sector},{property?.details?.localArea}
                 </span>
               </div>
@@ -115,33 +117,42 @@ const Detail = () => {
           </div>
 
           {/* Property Amenities section */}
-         
         </div>
         <div>
-            <div css={amenitiesContainerStyle}>
-              {property?.details?.propertyAmenities.map((amenity, index) => (
-                <Chip
-                  key={index}
-                  label={amenity}
-                  style={{
-                    backgroundColor: "#f5f4f8",
-                    margin: "5px",
-                    fontSize: "0.9rem",
-                    color: "#1f4c6b",
-                  }}
-                />
-              ))}
-            </div>
+          <div css={amenitiesContainerStyle}>
+            {property?.details?.propertyAmenities.map((amenity, index) => (
+              <Chip
+                key={index}
+                label={amenity}
+                style={{
+                  backgroundColor: "#f5f4f8",
+                  margin: "5px",
+                  fontSize: "0.9rem",
+                  color: "#1f4c6b",
+                }}
+              />
+            ))}
           </div>
-          <h3 style={{color:"#252B5C"}}>Property Amenities</h3>
+        </div>
+        <h3 style={{ color: "#252B5C", fontSize: "18px" }}>
+          Property Amenities
+        </h3>
 
         {/* Property Type section */}
         <div css={amenitiesSectionStyle}>
-          <div css={amenitiesStyle}>
-            <span>{property?.details?.propertyType}</span>
-          </div>
+          {property?.details?.propertyType.map((amenity, index) => (
+            <Chip
+              key={index}
+              label={amenity}
+              style={{
+                backgroundColor: "#234F68",
+                margin: "5px",
+                fontSize: "0.9rem",
+                color: "#fff",
+              }}
+            />
+          ))}
         </div>
-     
       </div>
       <Navbar />
     </>
@@ -184,7 +195,7 @@ const propertyTitlePriceStyle = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #1f4c6b;
+  color: #252b5c;
 `;
 
 const propertyLocationStyle = css`
@@ -235,11 +246,13 @@ const locationTagsStyle = css`
 
 const amenitiesSectionStyle = css`
   margin: 1rem 0;
-  background: #234F68;
-  color:#fff;
-  width:70px;
-  border-radius:20px;
-  padding:10px
+  color: #fff;
+  width: auto;
+  height: 29px;
+  border-radius: 20px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
 `;
 
 const amenitiesStyle = css`
