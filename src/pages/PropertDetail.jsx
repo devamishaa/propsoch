@@ -6,8 +6,9 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import properties from "../utils/data";
 import Chip from "@mui/material/Chip";
-import PlaceRoundedIcon from "@mui/icons-material/PlaceRounded";
+import { MdPlace } from "react-icons/md";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
+import { MdOutlinePlace } from "react-icons/md";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -72,7 +73,7 @@ const Detail = () => {
           <div css={propertyLocationStyle}>
             {(property?.details?.sector || property?.details?.localArea) && (
               <div style={{ display: "flex", alignItems: "center" }}>
-                <PlaceRoundedIcon
+                <MdPlace
                   style={{ fontSize: "2rem", color: "#1F4C6B" }}
                 />
                 <span style={{ color: "#888888", lineHeight: "14px" }}>
@@ -89,7 +90,7 @@ const Detail = () => {
           <h3>Location</h3>
           <div css={locationAddressStyle}>
             <div css={locationIconStyle}>
-              <PlaceOutlinedIcon />
+              <MdOutlinePlace />
             </div>
             <span>{property?.details?.fullAddress}</span>
           </div>
