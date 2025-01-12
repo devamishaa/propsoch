@@ -182,7 +182,7 @@ const WishlistPage = () => {
         {wishlistProperties.length > 0 ? (
           wishlistProperties.map((property) => (
             <PropertyCard
-              key={property.id}
+            key={`${property.id}-${Math.random()}`}
               property={property}
               onWishlist={() => {}}
             />

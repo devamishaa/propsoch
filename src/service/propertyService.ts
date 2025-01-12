@@ -481,7 +481,6 @@ interface PropertyResponse {
     }));
   };
   
-  // Simulated API call with delay
   export const fetchProperties = async (page: number): Promise<PropertyResponse> => {
     // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 800));
