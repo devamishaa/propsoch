@@ -1,13 +1,14 @@
 import React, { FC } from "react";
 import { useParams } from "react-router-dom";
 import styled from "@emotion/styled";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import mockProperties from "../service/propertyService";
 import propertyImg from "../assets/property.jpeg";
-import L from "leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 import { IoLocation } from "react-icons/io5";
 import Navbar from "./Navigation";
+import Header from "./Header";
 
 // Styled components
 const Container = styled.div`
@@ -64,8 +65,11 @@ const LocationSection = styled.div`
 
   .location-icon {
     background-color: #fcd8bb;
-    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    padding: 0.4rem;
     border-radius: 50%;
+    margin-bottom: 0.4rem;
   }
 
   .location-address {
@@ -134,8 +138,8 @@ interface PropertyDetailProps {
   details?: {
     fullAddress: string;
     mapLocation?: {
-      latitude: number;
-      longitude: number;
+      latitude: any;
+      longitude: any;
     };
     propertyType: string;
     nearbyBenefits: Record<string, number>;
@@ -153,7 +157,7 @@ const customIcon = new L.Icon({
 });
 
 const PropertyDetail: FC = () => {
-  const { id } = useParams<{ id: string }>(); // UseParams for accessing route parameters
+  const { id } = useParams<{ id: string }>();
   const property: PropertyDetailProps | undefined = mockProperties.find(
     (prop) => prop.id === parseInt(id as string, 10)
   );
@@ -172,6 +176,7 @@ const PropertyDetail: FC = () => {
 
   return (
     <Container>
+      <Header />
       <PropertyImageContainer>
         <PropertyImage
           src={property.images[0] || propertyImg}
@@ -206,29 +211,31 @@ const PropertyDetail: FC = () => {
           </div>
           <span>{property.details?.fullAddress}</span>
         </div>
-        {/* <MapContainerStyled>
-          <MapContainer
-            center={[
-              property.details?.mapLocation?.latitude || 0,
-              property.details?.mapLocation?.longitude || 0,
-            ]}
-            zoom={15}
-            style={{ height: "15rem", width: "100%", borderRadius: "1rem" }}
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            {property.details?.mapLocation && (
-              <Marker
-                position={[
-                  property.details.mapLocation.latitude,
-                  property.details.mapLocation.longitude,
-                ]}
-                icon={customIcon}
-              >
-                <Popup>{property.name}</Popup>
-              </Marker>
-            )}
-          </MapContainer>
-        </MapContainerStyled> */}
+        <div className="map-container">
+          <div className="map-container">
+            <MapContainer
+              center={[
+                property?.details?.mapLocation?.latitude || 0,
+                property?.details?.mapLocation?.longitude || 0,
+              ]}
+              zoom={15}
+              style={{ height: "15rem", width: "100%", borderRadius: "1rem" }}
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              {property?.details?.mapLocation && (
+                <Marker
+                  position={[
+                    property.details.mapLocation.latitude,
+                    property.details.mapLocation.longitude,
+                  ]}
+                  icon={customIcon}
+                >
+                  <Popup>{property.name}</Popup>
+                </Marker>
+              )}
+            </MapContainer>
+          </div>
+        </div>
         <h3>Property Amenities</h3>
       </LocationSection>
       <AmenitiesSection>

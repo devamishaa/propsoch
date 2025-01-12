@@ -1,4 +1,4 @@
-// TODO 
+// TODO
 
 // - routing = done
 // - property details
@@ -10,10 +10,11 @@ import styled from "@emotion/styled";
 import { PropertyCard } from "./components/PropertyCard";
 import { Property } from "./types/Property";
 import { fetchProperties } from "./service/propertyService";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PropertyDetail from "./components/PropertyDetail";
 import Navbar from "./components/Navigation";
 import Header from "./components/Header";
+import { useInView } from "react-intersection-observer";
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +23,6 @@ const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 `;
-
 
 const CardDisplay = styled.div`
   display: grid;
@@ -60,7 +60,7 @@ const Loader = styled.div`
 
 export const MainComponent: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
-  const [,setWishlist] = useState<string[]>([]); 
+  const [, setWishlist] = useState<string[]>([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
@@ -72,32 +72,34 @@ export const MainComponent: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
   const loadMoreProperties = async () => {
     if (loading || !hasMore) return;
-    setLoading(true);
 
-    try {
-      const response = await fetchProperties(page);
-      setProperties((prev) => [...prev, ...response.properties]);
-      setHasMore(response.hasMore);
-      setPage(page + 1);
-    } catch (error) {
-      console.error("Error fetching properties:", error);
-    } finally {
-      setLoading(false);
-    }
+    setLoading(true);
+    const response = await fetchProperties(page);
+
+    setProperties((prev) => [...prev, ...response.properties]);
+    setPage((prev) => prev + 1);
+    setHasMore(response.hasMore);
+    setLoading(false);
   };
 
   useEffect(() => {
-    loadMoreProperties();
-  }, []);
+    if (inView && !loading && hasMore) {
+      loadMoreProperties();
+    }
+  }, [inView]);
 
   const toggleWishlist = (id: string) => {
-    setWishlist((prevWishlist:any) => {
+    setWishlist((prevWishlist: any) => {
       if (prevWishlist.includes(id)) {
-        return prevWishlist.filter((item:any) => item !== id); 
+        return prevWishlist.filter((item: any) => item !== id);
       } else {
-        return [...prevWishlist, id]; 
+        return [...prevWishlist, id];
       }
     });
   };
@@ -109,25 +111,32 @@ export const MainComponent: React.FC = () => {
   //     </div>
   //   );
   // }
-  
+
   return (
     <>
-    <Container>
-      <Header />
-      <CardDisplay>
-        {properties.map((property) => (
-          <PropertyCard
-            key={property.id}
-            property={property}
-            onWishlist={toggleWishlist}
-          />
-        ))}
-        {loading && <Loader />}
-        {!hasMore && <>No more properties to display</>}
-      </CardDisplay>
-      <Navbar />
-    </Container>
-      </>
+      <Container>
+        <Header />
+        <CardDisplay>
+          {properties.map((property) => (
+            <PropertyCard
+              key={property.id}
+              property={property}
+              onWishlist={toggleWishlist}
+            />
+          ))}
+          <div ref={ref}>
+            {loading ? (
+              <Loader />
+            ) : properties.length > 0 ? (
+              ""
+            ) : (
+              "No more properties available"
+            )}
+          </div>
+        </CardDisplay>
+        <Navbar />
+      </Container>
+    </>
   );
 };
 
@@ -139,6 +148,7 @@ const App = () => {
           <Route index element={<MainComponent />} />
           <Route path="property/:id" element={<PropertyDetail />} />
           <Route path="wishlist" element={<WishlistPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -155,8 +165,10 @@ const WishlistPage = () => {
   // Fetch the wishlist properties on component mount
   useEffect(() => {
     const fetchWishlist = async () => {
-      const allProperties = await fetchProperties(1); 
-      const wishlistedProperties = allProperties.properties.filter((property) => property.isWishlisted);
+      const allProperties = await fetchProperties(1);
+      const wishlistedProperties = allProperties.properties.filter(
+        (property) => property.isWishlisted
+      );
       setWishlistProperties(wishlistedProperties);
     };
 
@@ -164,7 +176,7 @@ const WishlistPage = () => {
   }, []);
 
   return (
-    <div style={{padding:"1rem"}}>
+    <div style={{ padding: "1rem" }}>
       <h2>Wishlist</h2>
       <div>
         {wishlistProperties.length > 0 ? (
@@ -182,5 +194,3 @@ const WishlistPage = () => {
     </div>
   );
 };
-
-
