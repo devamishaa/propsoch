@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart, AiOutlineSearch } from "react-icons/ai";
@@ -12,9 +13,9 @@ const NavbarContainer = styled.div`
   bottom: 0;
   width: 100%;
   align-items: center;
-  background:#fff;
-  padding-top:0.5rem;
-  padding-bottom:0.5rem;
+  background: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 `;
 
 const NavItem = styled(Link)`
@@ -42,7 +43,7 @@ const NavIcon = styled.div`
   margin-bottom: 4px;
 `;
 
-const Navbar = () => {
+function Navbar() {
   return (
     <NavbarContainer>
       <NavItem to="/">
@@ -71,6 +72,6 @@ const Navbar = () => {
       </NavItem>
     </NavbarContainer>
   );
-};
+}
 
 export default Navbar;

@@ -1,31 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-import { MdBatteryChargingFull, MdBatteryFull } from "react-icons/md"; // Battery icons
-import { FiWifi, FiWifiOff } from "react-icons/fi"; // Wi-Fi icons
+import { MdBatteryChargingFull, MdBatteryFull } from "react-icons/md";
+import { FiWifi, FiWifiOff } from "react-icons/fi";
 import { GiNetworkBars } from "react-icons/gi";
-
-interface BatteryManager extends EventTarget {
-  level: number;
-  charging: boolean;
-  addEventListener(
-    type: "levelchange" | "chargingchange",
-    listener: (this: BatteryManager, ev: Event) => void
-  ): void;
-  removeEventListener(
-    type: "levelchange" | "chargingchange",
-    listener: (this: BatteryManager, ev: Event) => void
-  ): void;
-}
-
-interface NavigatorWithBattery extends Navigator {
-  getBattery?: () => Promise<BatteryManager>;
-}
-
-interface BatteryStatus {
-  level: string;
-  charging: boolean;
-}
 
 // Styled components
 const HeaderContainer = styled.div`
@@ -69,10 +47,10 @@ const Icon = styled.span`
   color: black;
 `;
 
-const Header: React.FC = () => {
-  const [time, setTime] = useState<string>("");
-  const [battery, setBattery] = useState<BatteryStatus>({ level: "100%", charging: true });
-  const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
+function Header() {
+  const [time, setTime] = useState("");
+  const [battery, setBattery] = useState({ level: "100%", charging: true });
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
 
   // Update time every minute
   useEffect(() => {
@@ -90,10 +68,8 @@ const Header: React.FC = () => {
 
   // Get battery status
   useEffect(() => {
-    const navigatorWithBattery = navigator as NavigatorWithBattery;
-
-    if (navigatorWithBattery.getBattery) {
-      navigatorWithBattery.getBattery().then((batteryManager) => {
+    if (navigator.getBattery) {
+      navigator.getBattery().then((batteryManager) => {
         const updateBatteryStatus = () => {
           setBattery({
             level: `${Math.round(batteryManager.level * 100)}%`,
@@ -166,6 +142,6 @@ const Header: React.FC = () => {
       </StatusIcons>
     </HeaderContainer>
   );
-};
+}
 
 export default Header;
