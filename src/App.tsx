@@ -27,7 +27,7 @@ const Container = styled.div`
 const CardDisplay = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 5px;
   width: 100%;
   box-sizing: border-box;
   padding: 0rem 0.4rem 0rem 0.4rem;
@@ -64,6 +64,13 @@ export const MainComponent: React.FC = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const loadMoreProperties = async () => {
     if (loading || !hasMore) return;
@@ -95,6 +102,13 @@ export const MainComponent: React.FC = () => {
     });
   };
 
+  // if (windowWidth > 768) {
+  //   return (
+  //     <div className="error">
+  //       <h1>Switch to Tab or Mobile View</h1>
+  //     </div>
+  //   );
+  // }
   
   return (
     <>
@@ -140,9 +154,8 @@ const WishlistPage = () => {
 
   // Fetch the wishlist properties on component mount
   useEffect(() => {
-    // Simulate fetching wishlisted properties (you may want to fetch from an API or global state)
     const fetchWishlist = async () => {
-      const allProperties = await fetchProperties(1); // Assuming you're fetching properties from the first page
+      const allProperties = await fetchProperties(1); 
       const wishlistedProperties = allProperties.properties.filter((property) => property.isWishlisted);
       setWishlistProperties(wishlistedProperties);
     };

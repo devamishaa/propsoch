@@ -6,91 +6,168 @@ interface PropertyResponse {
     properties: Property[];
     hasMore: boolean;
   }
-  
+
   const mockProperties: Property[] = [
     {
-      id: "p1",
-      name: "Sushant Lok 2, Gurgaon",
-      location: "Apr 5-10",
-      images: [
-        "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800",
-        "https://plus.unsplash.com/premium_photo-1687862745573-1e8dff585c66?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      ],
-      rating: 4.1,
-      views: 41172,
-      dateRange: "Apr 5-10",
+      id: 12,
+      name: "Palm Heights",
+      location: "Whitefield, Bangalore",
+      dateRange: "Mar 15-April 20",
+      views: 35689,
+      rating: 4.75,
       isMostLiked: true,
       isWishlisted: false,
-      coordinates: {
-        lat: 28.4595,
-        lng: 77.0266
-      }
+      images: [
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_6CXIrstbhN1735217424718_94832_iris_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_ggCYWCG17J1735217424542_20455_iris_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_OY9b3G0R161735217425414_74195_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_project_image_TMy3v1yCfj1735217424178_89805_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_gtOOzrBk1u1735217425802_86312_original.jpg",
+  
+      ],
+      details: {
+        sector: "Whitefield",
+        localArea: "Bangalore",
+        price: "2.25 Cr",
+        emiAvailable: true,
+        fullAddress:
+          "Whitefield Main Road, Bengaluru, Karnataka 560066",
+        mapLocation: {
+          longitude: 77.749947,
+          latitude: 12.971599,
+        },
+        nearbyBenefits: {
+          Hospitals: 4,
+          "Gas Stations": 5,
+          Schools: 3,
+          "Railway Station": 2,
+          Mall: 2,
+          Restaurants: 8,
+        },
+        propertyAmenities: [
+          "Gym",
+          "Swimming Pool",
+          "Parking",
+          "Security",
+          "Clubhouse",
+          "CCTV",
+          "Rainwater Harvesting",
+          "Basketball Court",
+          "Tennis Court",
+          "Jogging Track",
+        ],
+        propertyType: "Apartment",
+      },
     },
     {
-      id: "p2",
-      name: "Rainbow Heights, HSR",
-      location: "Mar 5-14",
-      images: [
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800",
-        "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      ],
-      rating: 3.0,
-      views: 84012,
-      dateRange: "Mar 5-14",
+      id: 13,
+      name: "Skyline Villas",
+      location: "Indiranagar, Bangalore",
+      dateRange: "Apr 1-5",
+      views: 48210,
+      rating: 4.9,
       isMostLiked: true,
       isWishlisted: false,
-      coordinates: {
-        lat: 12.9116,
-        lng: 77.6474
-      }
+      images: [
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_ggCYWCG17J1735217424542_20455_iris_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_project_image_TMy3v1yCfj1735217424178_89805_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_6CXIrstbhN1735217424718_94832_iris_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_OY9b3G0R161735217425414_74195_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_gtOOzrBk1u1735217425802_86312_original.jpg",
+  
+       ],
+      details: {
+        sector: "Indiranagar",
+        localArea: "Bangalore",
+        price: "3.5 Cr",
+        emiAvailable: true,
+        fullAddress:
+          "Indiranagar, HAL 2nd Stage, Bengaluru, Karnataka 560038",
+        mapLocation: {
+          longitude: 77.640013,
+          latitude: 12.971891,
+        },
+        nearbyBenefits: {
+          Hospitals: 5,
+          "Gas Stations": 4,
+          Schools: 2,
+          "Railway Station": 1,
+          Mall: 3,
+          Restaurants: 10,
+        },
+        propertyAmenities: [
+          "Private Garden",
+          "Swimming Pool",
+          "Security",
+          "Home Theater",
+          "Rainwater Harvesting",
+          "Tennis Court",
+          "Amphitheater",
+          "Yoga Deck",
+        ],
+        propertyType: "Villa",
+      },
     },
     {
-      id: "p3",
-      name: "Walden, Colorado, US",
-      location: "Mar 3-8",
-      images: [
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800",
-        "https://images.unsplash.com/photo-1602941525436-839a5be074ff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1679939153963-ff44f5deeba2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      ],
-      rating: 2.8,
-      views: 12048,
-      dateRange: "Mar 3-8",
-      isMostLiked: true,
+      id: 14,
+      name: "Emerald Lakeview",
+      location: "Sarjapur Road, Bangalore",
+      dateRange: "Apr 10-15",
+      views: 29840,
+      rating: 4.6,
+      isMostLiked: false,
       isWishlisted: false,
-      coordinates: {
-        lat: 40.7318,
-        lng: -106.2847
-      }
+      images: [
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_gtOOzrBk1u1735217425802_86312_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_ggCYWCG17J1735217424542_20455_iris_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_project_image_TMy3v1yCfj1735217424178_89805_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_6CXIrstbhN1735217424718_94832_iris_original.jpg",
+        "https://assets.nobroker.in/media/building/8a9fa5839402d3c7019402e916cd063e/images/8a9fa5839402d3c7019402e916cd063e_interior_image_OY9b3G0R161735217425414_74195_original.jpg",
+  
+      ],
+      details: {
+        sector: "Sarjapur",
+        localArea: "Bangalore",
+        price: "1.8 Cr",
+        emiAvailable: true,
+        fullAddress:
+          "Sarjapur Main Road, Bengaluru, Karnataka 562125",
+        mapLocation: {
+          longitude: 77.711323,
+          latitude: 12.911235,
+        },
+        nearbyBenefits: {
+          Hospitals: 3,
+          "Gas Stations": 5,
+          Schools: 4,
+          "Railway Station": 1,
+          Mall: 1,
+          Restaurants: 6,
+        },
+        propertyAmenities: [
+          "Gym",
+          "Swimming Pool",
+          "Parking",
+          "Security",
+          "Park",
+          "CCTV",
+          "Children's Play Area",
+          "Jogging Track",
+          "Amphitheater",
+          "Clubhouse",
+        ],
+        propertyType: "Apartment",
+      },
     },
-    {
-      id: "p4",
-      name: "Sushant Lok 2, Gurgaon",
-      location: "Apr 5-10",
-      images: [
-        "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800",
-        "https://plus.unsplash.com/premium_photo-1683888725049-0e7337583bbf?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      ],
-      rating: 4.1,
-      views: 41172,
-      dateRange: "Apr 5-10",
-      isMostLiked: true,
-      isWishlisted: false,
-      coordinates: {
-        lat: 28.4595,
-        lng: 77.0266
-      }
-    }
   ];
+  
+  export default mockProperties;
   
   // Helper function to generate more mock properties
   const generateMoreProperties = (page: number): Property[] => {
     return mockProperties.map(property => ({
       ...property,
-      id: `${property.id}-${page}`,
+      id: `${property.id}`,
       name: `${property.name} (Set ${page})`,
       views: Math.floor(property.views * (0.8 + Math.random() * 0.4)),
       rating: Number((property.rating * (1.9 + Math.random() * 0.2)).toFixed(1)),
@@ -103,8 +180,6 @@ interface PropertyResponse {
     // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 800));
     
-    // Simulate API pagination
-    // const propertiesPerPage = 4;
     const maxPages = 5;
     
     if (page > maxPages) {
@@ -122,52 +197,6 @@ interface PropertyResponse {
     };
   };
   
-  // Optional: Add filter and search functionality
-  export interface PropertyFilters {
-    minPrice?: number;
-    maxPrice?: number;
-    minRating?: number;
-    location?: string;
-    dateRange?: {
-      start: Date;
-      end: Date;
-    };
-  }
   
-  export const searchProperties = async (
-    query: string,
-    filters?: PropertyFilters,
-    page: number = 1
-  ): Promise<PropertyResponse> => {
-    await new Promise(resolve => setTimeout(resolve, 800));
+  
     
-    let filteredProperties = generateMoreProperties(page);
-    
-    // Apply search query
-    if (query) {
-      filteredProperties = filteredProperties.filter(property =>
-        property.name.toLowerCase().includes(query.toLowerCase()) ||
-        property.location.toLowerCase().includes(query.toLowerCase())
-      );
-    }
-    
-    // Apply filters
-    if (filters) {
-      if (filters.minRating) {
-        filteredProperties = filteredProperties.filter(
-          property => property.rating >= filters.minRating!
-        );
-      }
-      
-      if (filters.location) {
-        filteredProperties = filteredProperties.filter(property =>
-          property.location.toLowerCase().includes(filters.location!.toLowerCase())
-        );
-      }
-    }
-    
-    return {
-      properties: filteredProperties,
-      hasMore: page < 5 && filteredProperties.length > 0
-    };
-  };

@@ -10,7 +10,7 @@ const Card = styled(motion.div)`
   overflow: hidden;
   background: white;
   color: #000;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
   position: relative;
   width: 176px;
   height: 326px;
@@ -19,7 +19,7 @@ const Card = styled(motion.div)`
 
 const ImageContainer = styled.div`
   position: relative;
-  aspect-ratio: 16/23;
+  aspect-ratio: 16/21;
   overflow: hidden;
 `;
 
@@ -30,7 +30,7 @@ const ImageSlider = styled.div`
 
 const PropertyImage = styled.img`
   width: 176px;
-  height: 246px;
+  height: 226px;
   object-fit: cover;
   border-radius: 16px;
 `;
@@ -79,7 +79,7 @@ const DotsContainer = styled.div`
   position: absolute;
   bottom: 10px;
   left: 50%;
-  bottom:30%;
+  bottom:36%;
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
@@ -130,9 +130,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onWishlist
     return "#28a745"; // Green
   };
 
-  const handleCardClick = () => {
-    navigate(`/property/${property.id}`); // Redirect to the property details page
+  const handleNavigation = () => {
+    navigate(`/property/${property.id}`);
   };
+
 
   const handleDotClick = (index: number) => {
     setCurrentImageIndex(index);
@@ -156,14 +157,14 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onWishlist
           }}
         >
           {property.images.map((image, index) => (
-            <PropertyImage key={index} src={image} alt={property.name}  onClick={handleCardClick}/>
+            <PropertyImage key={index} src={image} alt={property.name}  onClick={handleNavigation}/>
           ))}
         </ImageSlider>
         {property.isMostLiked && <Badge>Most Liked</Badge>}
         <HeartButton
           onClick={(e: any) => {
             e.stopPropagation();
-            onWishlist(property.id);
+            onWishlist(String(property.id));
           }}
           whileTap={{ scale: 0.8 }}
         >
@@ -200,9 +201,9 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property, onWishlist
             <FaStar /> {property.rating}
           </span>
         </Stats>
-        <p style={{ fontWeight: "600" }}>{property.name}</p>
+        <p style={{ fontWeight: "600",fontSize:"0.6rem" }}>{property.name}</p>
         <p style={{ color: "#888888" }}>{property.location}</p>
-        {/* <span style={{ color: "#888888" }}>{property.dateRange}</span> */}
+        <p style={{ color: "#888888" }}>{property.dateRange}</p>
       </Details>
     </Card>
   );
