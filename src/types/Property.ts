@@ -1,5 +1,5 @@
 export interface Property {
-  id: number;
+  id: any;
   name: string;
   location: string;
   images: string[];

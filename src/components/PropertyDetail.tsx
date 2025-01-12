@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { useParams } from "react-router-dom";
 import styled from "@emotion/styled";
 import mockProperties from "../service/propertyService";
 import propertyImg from "../assets/property.jpeg";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { IoLocation } from "react-icons/io5";
@@ -83,25 +83,6 @@ const LocationSection = styled.div`
     font-size: 0.8rem;
     font-weight: 600;
     color: #1f4c6b;
-  }
-`;
-
-const MapContainerStyled = styled.div`
-  margin: 1rem 0;
-`;
-
-const LocationTags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 0.5rem;
-  color: #1f4c6b;
-
-  span {
-    background-color: #f5f4f8;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
   }
 `;
 

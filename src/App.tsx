@@ -104,13 +104,13 @@ export const MainComponent: React.FC = () => {
     });
   };
 
-  // if (windowWidth > 768) {
-  //   return (
-  //     <div className="error">
-  //       <h1>Switch to Tab or Mobile View</h1>
-  //     </div>
-  //   );
-  // }
+  if (windowWidth > 768) {
+    return (
+      <div className="error">
+        <h1>Switch to Tab or Mobile View</h1>
+      </div>
+    );
+  }
 
   return (
     <>

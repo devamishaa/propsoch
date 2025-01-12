@@ -40,7 +40,6 @@ const LoadingIndicator = styled.div`
 export const PropertyList: React.FC = () => {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
